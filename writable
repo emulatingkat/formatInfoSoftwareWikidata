@@ -3,9 +3,12 @@ site = pywikibot.Site("wikidata", "wikidata")
 repo = site.data_repository()
 item = pywikibot.ItemPage(repo, "Q220993")
 
+#replace the QID in line 4 with any other QID from our list of 10 pieces of software.
+
 item_dict = item.get()
 clm_dict = item_dict["claims"]
 clm_list = clm_dict["P1073"]
+
 #P1073 is writable file format
 
 for clm in clm_list:
