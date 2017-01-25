@@ -1,0 +1,14 @@
+import pywikibot
+site = pywikibot.Site("wikidata", "wikidata")
+repo = site.data_repository()
+item = pywikibot.ItemPage(repo, "Q220993")
+
+item_dict = item.get()
+clm_dict = item_dict["claims"]
+clm_list = clm_dict["P1073"]
+#P1073 is writable file format
+
+for clm in clm_list:
+    
+    clm_trgt = clm.getTarget()
+    print(clm_trgt)
